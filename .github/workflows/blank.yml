@@ -23,12 +23,12 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Use variables
         run: |
-          echo "repository variable : $REPOSITORY_VAR"
+          echo "repository variable : ${{ vars.REPOSITORY_VAR }}"
           echo "organization variable : $ORGANIZATION_VAR"
           echo "overridden variable : $OVERRIDE_VAR"
           echo "variable from shell environment : $env_var"
         env:
-          REPOSITORY_VAR: ${{ vars.REPOSITORY_VAR }}
+          # REPOSITORY_VAR: ${{ vars.REPOSITORY_VAR }}
           ORGANIZATION_VAR: ${{ vars.ORGANIZATION_VAR }}
           OVERRIDE_VAR: localSetVar
         
